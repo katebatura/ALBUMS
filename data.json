@@ -1,0 +1,127 @@
+[
+    {
+        "tr": [
+            {
+                "src": "http://fe.it-academy.by/Examples/Beatles/Please_Please_Me.jpg",
+                "name": "Please Please Me",
+                "year": "1963",
+                "RollingStone":[
+                    {
+                        "position": "39"
+                    }
+                ]
+                
+            },
+            {
+                "src": "http://fe.it-academy.by/Examples/Beatles/With_the_Beatles.jpg",
+                "name": "With The Beatles",
+                "year": "1963",
+                "RollingStone":[
+                    {
+                        "position": "59"
+                    }
+                ]
+                
+            },
+            {
+                "src": "http://fe.it-academy.by/Examples/Beatles/A_Hard_Day&apos;s_Night.jpg",
+                "name": "A Hard Day's Night",
+                "year": "64",
+                "RollingStone":[
+                    {
+                        "position": "307"
+                    }
+                ]
+                
+            },
+            {
+                "src": "http://fe.it-academy.by/Examples/Beatles/Beatles_for_Sale.jpeg",
+                "name": "Beatles for Sale",
+                "year": "1964",
+                "RollingStone":[]           
+            }
+        ]
+    },
+    {
+        "tr": [
+            {
+                "src": "http://fe.it-academy.by/Examples/Beatles/Help!.jpg",
+                "name": "Help!",
+                "year": "1965",
+                "RollingStone":[
+                    {
+                        "position": "331"
+                    }
+                ]
+                
+            },
+            {
+                "src": "http://fe.it-academy.by/Examples/Beatles/Rubber_Soul.jpg",
+                "name": "Rubber Soul",
+                "year": "1965",
+                "RollingStone":[
+                    {
+                        "position": "5"
+                    }
+                ]
+                
+            },
+            {
+                "src": "http://fe.it-academy.by/Examples/Beatles/Revolver.jpg",
+                "name": "Revolver",
+                "year": "1966",
+                "RollingStone":[]
+                
+            },
+            {
+                "src": "http://fe.it-academy.by/Examples/Beatles/Sgt._Pepper&apos;s_Lonely_Hearts_Club_Band.jpg",
+                "name": "Sgt. Pepper's Lonely Hearts Club Band",
+                "year": "1967",
+                "RollingStone":[
+                    {
+                        "position": "1"
+                    }
+                ]           
+            }
+        ]
+    },
+    {
+        "tr": [
+            {
+                "src": "http://fe.it-academy.by/Examples/Beatles/Magical_Mystery_Tour.jpg",
+                "name": "Magical Mystery Tour",
+                "year": "1967",
+                "RollingStone":[]
+                
+            },
+            {
+                "src": "http://fe.it-academy.by/Examples/Beatles/The_White_Album.png",
+                "name": "The Beatles (White Album)",
+                "year": "1968",
+                "RollingStone":[
+                    {
+                        "position": "10"
+                    }
+                ]
+                
+            },
+            {
+                "src": "http://fe.it-academy.by/Examples/Beatles/Yellow_Submarine.jpg",
+                "name": "Yellow Submarine",
+                "year": "1969",
+                "RollingStone":[]
+                
+            },
+            {
+                "src": "http://fe.it-academy.by/Examples/Beatles/Abbey_Road.jpg",
+                "name": "Abbey Road",
+                "year": "1969",
+                "RollingStone":[
+                    {
+                        "position": "14"
+                    }
+                ]           
+            }
+        ]
+    }
+]

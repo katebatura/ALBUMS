@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>BEATLES</title>
+    <style>
+
+      .SAlbums td { padding: 10px 20px 10px 0; vertical-align: top }
+
+      .SName { color: blue; width: 180px; padding-left: 20px; text-indent: -20px }
+      .SName span { font-weight: bold }
+
+      .SYear { color: green }
+      .SYear span { font-weight: bold }
+
+      .SPlace { color: red }
+      .SPlace span { font-weight: bold }
+
+    </style>
+
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script>
+  </head>
+  <body>
+
+    <table class='SAlbums'>
+
+    </table>
+
+<br>Примечание: <span class='SPlace'>RollingStone</span> &mdash; позиция альбома в списке 500 величайших альбомов всех времён по версии журнала Rolling Stone.
+
+    <script id = "tableMarkap" type="text/x-jquery-tmpl">
+        {{each $data}}
+            <tr>
+              {{each tr}}
+              <td>
+                  <img src = '${src}' alt = '${name}' title = '${name}'>
+                  <div class='SName'>Название: <span>${name}</span></div>
+                  <div class='SYear'>Год выхода: <span>${year}</span></div>
+                  
+                  {{if RollingStone.length > 0}}
+                  <div class='SPlace'>RollingStone: <span>${RollingStone[0].position}</span></div>
+                  {{/if}}
+                </td>
+              {{/each}}
+            </tr>
+        {{/each}}
+    </script>
+    
+    <script id='ErrorTmpl' type='text/x-jquery-tmpl'>
+      <div>${message}</div>
+    </script>
+
+    <script>
+        "use strict";
+
+        fetch('data.json')
+          .then(x => {
+            if (x.ok) return x.json();
+            else {
+              throw new Error(x.status + " " + x.statusText);
+            }
+          })
+          .then(data => $('#tableMarkap').tmpl(data).appendTo('.SAlbums'))
+          .catch(e => $('#ErrorTmpl').tmpl(e).appendTo('body'));   
+
+    </script>
+
+  </body>
+</html>
