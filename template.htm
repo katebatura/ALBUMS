@@ -1,0 +1,15 @@
+        {{each $data}}
+            <tr>
+              {{each tr}}
+              <td>
+                  <img src = '${src}' alt = '${name}' title = '${name}'>
+                  <div class='SName'>Название: <span>${name}</span></div>
+                  <div class='SYear'>Год выхода: <span>${year}</span></div>
+                  
+                  {{if RollingStone.length > 0}}
+                  <div class='SPlace'>RollingStone: <span>${RollingStone[0].position}</span></div>
+                  {{/if}}
+                </td>
+              {{/each}}
+            </tr>
+        {{/each}}   

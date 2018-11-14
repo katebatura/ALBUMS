@@ -29,40 +29,47 @@
 
 <br>Примечание: <span class='SPlace'>RollingStone</span> &mdash; позиция альбома в списке 500 величайших альбомов всех времён по версии журнала Rolling Stone.
 
-    <script id = "tableMarkap" type="text/x-jquery-tmpl">
-        {{each $data}}
-            <tr>
-              {{each tr}}
-              <td>
-                  <img src = '${src}' alt = '${name}' title = '${name}'>
-                  <div class='SName'>Название: <span>${name}</span></div>
-                  <div class='SYear'>Год выхода: <span>${year}</span></div>
-                  
-                  {{if RollingStone.length > 0}}
-                  <div class='SPlace'>RollingStone: <span>${RollingStone[0].position}</span></div>
-                  {{/if}}
-                </td>
-              {{/each}}
-            </tr>
-        {{/each}}
-    </script>
     
-    <script id='ErrorTmpl' type='text/x-jquery-tmpl'>
-      <div>${message}</div>
-    </script>
 
     <script>
         "use strict";
 
-        fetch('data.json')
+        fetch('template.htm')//загружаем шаблон
           .then(x => {
-            if (x.ok) return x.json();
+            if (x.ok) return x.text();
             else {
               throw new Error(x.status + " " + x.statusText);
             }
           })
-          .then(data => $('#tableMarkap').tmpl(data).appendTo('.SAlbums'))
-          .catch(e => $('#ErrorTmpl').tmpl(e).appendTo('body'));   
+          //если шаблон загружен, то загружаем данные
+          .then( template => {
+              fetch('data.json')
+                .then(x => {
+                  if (x.ok) return x.json();
+                  else {
+                    throw new Error(x.status + " " + x.statusText);
+                  }
+                })
+                .then(data => {
+                  $.tmpl(template, data).appendTo('.SAlbums');
+                })
+                .catch(e => console.log("data error: " + e.message));//если данные не загружены
+          })
+          //если шаблон не загружен, то загружаем шаблон ошибки
+          .catch(e => {
+            fetch('template-error.htm')
+                .then(x => {
+                  if (x.ok) return x.text();
+                  else {
+                    throw new Error(x.status + " " + x.statusText);
+                  }
+                })
+                .then(template => {
+                  $.tmpl(template, e).appendTo('body');
+                })
+                .catch(e => console.log("template error: " + e.message));
+          })
+
 
     </script>
 
